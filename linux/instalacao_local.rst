@@ -1,4 +1,4 @@
-Para instalar um programa localmente (sem sudo)::
+1) Para instalar um programa localmente (sem sudo)::
 
 	wget <file_url>
 
@@ -6,7 +6,7 @@ Caso esteja compactado::
 
 	tar xvf <file_name>
 	
-A partir daqui é recomendado seguir o README::
+2) A partir daqui é recomendado seguir o README::
 
 	more README.rst
 	
@@ -14,15 +14,21 @@ A partir daqui é recomendado seguir o README::
 	
 De modo geral os passos seguintes costumam ser como consta abaixo.
 
-Criar diretório onde deverão ficar os arquivos::
+3) Criar diretório onde deverão ficar os arquivos::
 
 	mkdir <novo_diretorio>
 	
-Executar o arquivo de configuração::
+3) Executar o arquivo de configuração::
 
 	./configure --prefix=<caminho_do_novo_diretorio>
 	
-Executar o make::
+Caso não exista um arquivo configure, pode-se tentar::
+
+	make configure
+	
+e em seguida fazer executar configure acima.
+	
+4) Executar o make::
 
 	make
 	
@@ -30,11 +36,13 @@ Ou, alternativamente (rodar com 8 núcleos)::
 
 	make -j 8
 	
-E por fim, executar o make install::
+5) E por fim, executar o make install::
 
 	make install
 	
-Aqui termina a instalação. Para poder executar o programa, é necessário atualizar o PATH do sistema:
+Aqui termina a instalação. 
+
+6) Para poder executar o programa, é necessário atualizar o PATH do sistema:
 
 	export PATH=${PATH}:<caminho_do_novo_diretorio/bin>
 	

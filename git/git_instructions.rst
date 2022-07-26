@@ -64,6 +64,10 @@ Alternar entre branches::
 
  git checkout <nome-da-branch>
 
+Alterar o nome da branch deafault inicial::
+
+ git config --global init.defaultBranch main
+
 
 -------------
 Staging

@@ -46,9 +46,9 @@ Aqui termina a instalação.
 
 	export PATH=${PATH}:<caminho_do_novo_diretorio/bin>
 	
-Caso deseje alterar o PATH permanentemente, deve alterar no arquivo .bash_profile da seguinte forma::
+Caso deseje alterar o PATH permanentemente, deve alterar no arquivo ~/.bash_profile da seguinte forma::
 
-	export PATH="$PATH:<caminho_do_novo_diretorio/bin>"
+	export PATH="<caminho_do_novo_diretorio/bin>:$PATH"
 	
 As alterações irão funcionar na próxima sessão. Caso deseje aplicá-las imediatamente, basta atualizar o shell atual com o comando source::
 

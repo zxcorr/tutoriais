@@ -1,6 +1,9 @@
 Introdução a Bash
 =======================================================
 
+Referências:
+https://ryanstutorials.net/linuxtutorial/
+
 
 
 Comandos Básicos
@@ -51,9 +54,29 @@ Revogar permissão de escrita de diversas pastas (flag de recursão -R) para o u
 	
 Caso deseje copiar uma pasta inteira, colocar a flag "-R" para que copie os arquivos recursivamente::
 
-	cp -R <origem> <destino>
+	cp -r <origem> <destino>
 	
+	
+6) Mover um arquivo::
 
+	mv <origem> <destino>
+
+Esse comando também é usado para renomear arquivos. Basta movê-lo para o mesmo local com um nome diferente.
+
+
+7) Remover (permanentemente!!!) um arquivo::
+
+	rm <arquivo>
+	
+Utilizar a flag -r (recursivo) para remover diretórios inteiros.
+**Atenção**: cuidado ao utilizar o comando. "rm -R /" remove a pasta root (arquivos do sistema).
+
+
+8) Criar um arquivo em branco::
+
+	touch <nome-do-arquivo>
+	
+	
 
 Servidores
 -------------------------------------------------------
@@ -81,11 +104,8 @@ Usar a seguinte estrutura para o arquivo no servidor::
 Outros Comandos
 -------------------------------------------------------
 
-1) Criar uma sequência de números inteiros::
 
-	seq <inicial> <final>
-	
-2) Criar variáveis::
+1) Criar variáveis::
 
 	<nome-da-variavel> = <conteudo-da-variavel>
 	
@@ -100,7 +120,7 @@ Variáveis ficam apenas disponíveis no processo atual. Caso deseje que fique di
 Variáveis especiais: PATH, 0-9, #, @, ?, $, USER, HOSTNAME, SECONDS, RANDOM, LINENO.
 	
 	
-3) Print::
+2) Print::
 
 	echo <conteudo>
 	
@@ -110,3 +130,30 @@ Exemplo::
 	echo $var1
 	
 
+3) Criar uma sequência de números inteiros::
+
+	seq <inicial> <final>
+	
+Ou:
+
+	{<inicial>..<final>..<passo>}
+	
+O passo apenas está disponível em versões de Bash4.x em diante.
+
+
+4) Fazer um laço::
+
+	for <item> in <sequencia>; do <comandos>; done
+	
+Exemplos::
+
+	for id in 0 1 2 8; do echo "id atual: $id"; done
+	
+	for number in $(seq 1 25); do echo "numero atual: $number"; done
+	
+	for hour in {0..23}; do echo "Hora: $hour"; done
+	
+	echo "Arquivos no diretorio atual:"
+	for file in ./*; do echo "$file"
+	
+	for file  

@@ -15,6 +15,23 @@ Existem serviços de manutenção de **repositórios remotos** (na nuvem), tais 
  
 Todo repositório incia-se contendo apenas uma *branch* (ramo), chamada *main* (antiga master no github). Quando se deseja desenvolver diferentes aspectos de um projeto porém sem alterar diretamente a main, pode-se criar uma nova branch, que será uma cópia independente da main. Não há limite de branches para um repositório. Quando uma branch chega em um ponto satisfatório de desenvolvimento, e concorda-se que as modificações devem ser integradas à branch main, então realiza-se um *merge*, em que as alterações dessa branch serão incorporadas a outra branch.
   
+A dinâmica de um repositório se dá basicamente entre o seu **diretório de trabalho** (*working directory*), onde você irá ver os arquivos e fazer alterações; uma **área de staging**, que é o controle que o git faz dos arquivos que irão entrar no repositório antes de efetivamente serem adicionados ao repositório; e o **repositório local**, que contém o *histórico* de todas as alterações do seu projeto. 
+
+..image:: git_flow_chart.jpeg
+
+A rotina de comandos mais básica para git é::
+
+	git init # inicia um repositório
+	git remote add origin <url> # conecta seu repositório local a um repositório remoto
+	git pull origin main # traz os arquivos do repositório remoto para o local
+	
+	... # alterações nos arquivos são realizadas
+	
+	git add . # adiciona todos os novos arquivos alterados para a área de staging
+	git commit -m "Mensagem explicativa" # realiza o commit, adicionando os arquivos ao repositório
+	git push origin main # adiciona as mudanças feitas no seu repositório local ao remoto
+  
+  
 Uma ótima sugestão de referência é o tutorial do Bitbucket:
 
 https://www.atlassian.com/br/git/tutorials
@@ -54,6 +71,7 @@ Remover .git (deleta o repositório local!)::
 -------------
 Branch
 -------------
+
 Cria uma branch::
 
  git branch <nome-da-branch>
@@ -68,10 +86,13 @@ Alterar o nome da branch deafault inicial::
 
  git config --global init.defaultBranch main
 
+Para remover uma branch, usar flag "-D".
+
 
 -------------
 Staging
 -------------
+
 Marca arquivos a serem adicionados ao commit::
 
  git add <file1> <file2>
@@ -88,6 +109,7 @@ Removendo arquivos do stage::
 -------------
 Commit
 -------------
+
 Realizar o **commit**::
 
  git commit -m "mensagem"
@@ -119,6 +141,15 @@ O comando pop é a junção do apply e em seguida do drop::
  git stash pop
 
 Também pode ser usado quando se realizou mudanças em uma branch indesejada. Nesse caso, realiza-se o stash, em seguida o checkout, e depois o apply e o drop.
+
+
+-----------
+Remover Arquivos
+-----------
+
+Para remover um arquivo do seu repositório::
+
+	rm <arquivo>
 
 
 =================================

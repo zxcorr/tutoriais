@@ -17,7 +17,7 @@ Todo repositório incia-se contendo apenas uma *branch* (ramo), chamada *main* (
   
 A dinâmica de um repositório se dá basicamente entre o seu **diretório de trabalho** (*working directory*), onde você irá ver os arquivos e fazer alterações; uma **área de staging**, que é o controle que o git faz dos arquivos que irão entrar no repositório antes de efetivamente serem adicionados ao repositório; e o **repositório local**, que contém o *histórico* de todas as alterações do seu projeto. 
 
-..image:: git_flow_chart.jpeg
+.. image:: git_flow_chart.jpeg
 
 A rotina de comandos mais básica para git é::
 
